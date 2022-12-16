@@ -1,0 +1,18 @@
+Базовая реализация метода-уведомителя не предостваляет безопасность многопоточному вызову метода, ибо другой поток может удалить всех подписчиков на событие:
+
+protected virtual void OnNewMail(NewMailEventArgs e) 
+{
+  EventHandler<NewMailEventArgs> temp = NewMail;
+  // А подсчиков то удалили в ином потоке до вызова метода!
+  if (temp != null) temp(this, e);
+}
+
+И для решения этой проблемы необходимо воспользоваться встроенным функционалом:
+
+protected void OnNewMail(NewMailEventArgs e) {
+  EventHandler<NewMailEventArgs> temp = 
+    Thread.VolatileRead(ref NewMail);
+  if (temp != null) temp(this, e);
+}
+
+Это возволяет считывать NewMail в точке вызова и одновременно с этим скопировать ее ссылку в делегат temp, вызов которого осуществляется при наличии подписчиков.

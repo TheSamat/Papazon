@@ -1,0 +1,80 @@
+CLR позволяет определять поля, параметры, локальные переменные, имеющих интерфейсный тип. Они способны вызывать методы, сигнатуры которых
+определены в этом интерфейсе, а в качестве реализации использовать сам обьект переменной. Так же еще и методы Object.
+
+В то же время интерфейсы не могут иметь экземпляров, но что это за интерфейсные типы? Это типы, реализующие эти интерфейсы. В качестве 
+примера можно рассмотреть String, реализирующий: IComparable, ICloneable, IConvertible, IEnumerable, IComparable<String>,
+IEnumerable<Char> и IEquatable<String>:
+
+	// Переменная s ссылается на объект String
+	String s = "Jeffrey";
+	// Используя переменную s, можно вызывать любой метод,
+	// определенный в String, Object, IComparable, ICloneable,
+	// IConvertible, IEnumerable и т. д.
+	
+	// Переменная cloneable ссылается на тот же объект String
+	ICloneable cloneable = s;
+	// Используя переменную cloneable, я могу вызвать любой метод,
+	// объявленный только в интерфейсе ICloneable (или любой метод,
+	// определенный в типе Object)
+	
+	// Переменная comparable ссылается на тот же объект String
+	IComparable comparable = s;
+	// Используя переменную comparable, я могу вызвать любой метод,
+	// объявленный только в интерфейсе IComparable (или любой метод,
+	// определенный в типе Object)
+	
+	// Переменная enumerable ссылается на тот же объект String
+	// Во время выполнения можно приводить интерфейсную переменную
+	// к интерфейсу другого типа, если тип объекта реализует оба интерфейса
+	IEnumerable enumerable = (IEnumerable) comparable;
+	// Используя переменную enumerable, я могу вызывать любой метод,
+	// объявленный только в интерфейсе IEnumerable (или любой метод,
+	// определенный только в типе Object)
+
+Значимые типы тоже могут использовать интерфейсы, но при приведении их к типу интерфейса происходит упаковка.
+
+Примечание: использование типа интерфейса и базового типа отличаются, ибо тип интерфейса будет использовать реализованный метод обьекта, 
+в то время как базовый класс - связан с механизмами наследования и инкапсуляции:
+    using System;
+
+    public class Program
+    {
+        private static void Main(string[] args)
+        {
+            ISomeInterface someInterface = new SomeClass();
+            someInterface.INotVirtualTest();
+            someInterface.INewNotVirtualTest();
+            Console.WriteLine();
+
+            SomeBaseClass someBaseClass = new SomeClass();
+            someBaseClass.NotVirtualTest();
+            someBaseClass.VirtualTest();
+            someBaseClass.NewNotVirtualTest();
+            Console.WriteLine();
+
+            SomeClass someClass = new SomeClass();
+            someClass.NotVirtualTest();
+            someClass.VirtualTest();
+            someClass.NewNotVirtualTest();
+            Console.WriteLine();
+        }
+    }
+    public interface ISomeInterface
+    {
+        void INotVirtualTest();
+        // virtual void VirtualTest(); //недоступен модификатор virtual
+        void INewNotVirtualTest();
+    }
+    public class SomeBaseClass
+    {
+        public void NotVirtualTest() { Console.WriteLine("SomeBaseClass.NotVirtualTest"); }
+        public virtual void VirtualTest() { Console.WriteLine("SomeBaseClass.VirtualTest"); }
+        public void NewNotVirtualTest() { Console.WriteLine("SomeBaseClass.NewNotVirtualTest"); }
+    }
+    public class SomeClass : SomeBaseClass, ISomeInterface
+    {
+        public override void VirtualTest() { Console.WriteLine("SomeClass.VirtualTest"); }
+        public new void NewNotVirtualTest() { Console.WriteLine("SomeClass.NewNotVirtualTest"); }
+        public void INotVirtualTest() { Console.WriteLine("SomeClass.INotVirtualTest"); }
+        public void INewNotVirtualTest() { Console.WriteLine("SomeClass.INewNotVirtualTest"); }
+    }

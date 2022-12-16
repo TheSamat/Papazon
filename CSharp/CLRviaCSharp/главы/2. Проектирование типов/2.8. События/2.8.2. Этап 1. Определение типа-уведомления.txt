@@ -1,0 +1,32 @@
+Этап 1. Определение типа для хранения всей дополнительной информации, передаваемой получателям уведомления о событии
+
+При возникновении события обьект, в котором оно возникло, должно передать дополнительную информацию обьектам-получателям в виде увеомление о событии, а само уведомление - класс, содержащий набор закрытых полей и набор открых неизменяемых (только для чтения) данных, который обязан быть наследован от System.EventArgs, а в названии класса иметь на конце EventArgs.
+
+// Этап 1. Определение типа для хранения информации,
+// которая передается получателям в виде уведомления
+// о событии
+internal class NewMailEventArgs : EventArgs 
+{
+  private readonly String m_from, m_to, m_subject;
+  public NewMailEventArgs(
+    String from, String to, String subject) 
+  {
+    m_from = from; m_to = to; m_subject = subject;
+  }
+  public String From { get { return m_from; } }
+  public String To { get { return m_to; } }
+  public String Subject { get { return m_subject; } }
+}
+
+это класс уведомления NewMailEventArgs, содержащий поля: отправителя (m_from), получателя (m_to) и тему (m_subject)
+
+
+ВАЖНОЕ Примечание: тип EventArgs из библиотеки классов  .NET Framework Class Library (FCL) выглядит так:
+
+[ComVisible(true), Serializable]
+public class EventArgs {
+  public static readonly EventArgs Empty = new EventArgs();
+  public EventArgs() { }
+}
+
+который лишь служит базовым типом и в случае, когде нет нужды передавать хоть какую-нибудь дополнительную информацию о событии, можно обойтись и без создания нового класса и воспользоваться свойством EventArgs.Empty (но хз, по мне лучшим вариантом является как раз таки расписание нового класса)

@@ -1,0 +1,59 @@
+Интерфейсы имеют особенность изменять поля структур минуя безопасность типов. Для предотвращения подобного не используйте интерфейсы следующим способом:
+
+internal interface IChangeBoxedPoint {
+  void Change(Int32 x, Int32 y);
+}
+
+internal struct Point : IChangeBoxedPoint{
+  private Int32 m_x, m_y;
+  public Point(Int32 x, Int32 y) {
+    m_x = x;
+    m_y = y;
+  }
+  
+  public void Change(Int32 x, Int32 y) {
+    m_x = x; m_y = y;
+  }
+
+  public override String ToString() {
+    return String.Format("({0}, {1})", m_x.ToString(), m_y.ToString());
+  }
+}
+
+public sealed class Program {
+  public static void Main() {
+
+    Point p = new Point(1, 1);
+    Console.WriteLine(p); //(1, 1)
+    
+    p.Change(2, 2);
+    Console.WriteLine(p); //(2, 2)
+    
+    Object o = p;
+    Console.WriteLine(o); //(2, 2)
+    
+    ((Point) o).Change(3, 3);
+    Console.WriteLine(o); //(2, 2)
+
+    // p упаковывается, упакованный объект изменяется и освобождается
+    ((IChangeBoxedPoint) p).Change(4, 4);
+    Console.WriteLine(p); //(1, 1)
+    
+    // Упакованный объект изменяется и выводится
+    ((IChangeBoxedPoint) o).Change(5, 5);
+    Console.WriteLine(o);  //(5, 5)
+  }
+}
+
+Первые 3 вывода не удивляют, а третий удивляет. Для начала о имеет тип Object и не имеет метода Change(), но вот только 
+при приведении его к Point не только переменная о не сменит свой тип, а создастся временный новый экземпляр типа Point, 
+в который копируются распакованные поля о, после же поля временного экземпляра изменятся, но после он будет сметен сборщиком мусора, 
+а наша переменная о так и останется неизменной.
+
+В следующем случае Point упаковывается в интерфейс IChangeBoxedPoint и после новый экземпляр Point типа IChangeBoxedPoint 
+вызовает метод Change, меняя себе значения, но никак не влияя на переменную p.
+
+В последнем же случае все интересней, ибо Object o приводится к типу IChangeBoxedPoint, ибо переменная о уже содержит в себе 
+упакованный Point. После же переменная о вызывает метод Change, изменяет ей поля.
+
+В C# сделать это без использования интерфейсов нельзя.

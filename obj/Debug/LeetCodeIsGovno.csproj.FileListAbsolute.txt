@@ -1,0 +1,8 @@
+E:\.Библиотека\Загрузки\LeetCodeIsGovno\bin\Debug\LeetCodeIsGovno.exe.config
+E:\.Библиотека\Загрузки\LeetCodeIsGovno\bin\Debug\LeetCodeIsGovno.exe
+E:\.Библиотека\Загрузки\LeetCodeIsGovno\bin\Debug\LeetCodeIsGovno.pdb
+E:\.Библиотека\Загрузки\LeetCodeIsGovno\obj\Debug\LeetCodeIsGovno.csproj.AssemblyReference.cache
+E:\.Библиотека\Загрузки\LeetCodeIsGovno\obj\Debug\LeetCodeIsGovno.csproj.SuggestedBindingRedirects.cache
+E:\.Библиотека\Загрузки\LeetCodeIsGovno\obj\Debug\LeetCodeIsGovno.csproj.CoreCompileInputs.cache
+E:\.Библиотека\Загрузки\LeetCodeIsGovno\obj\Debug\LeetCodeIsGovno.exe
+E:\.Библиотека\Загрузки\LeetCodeIsGovno\obj\Debug\LeetCodeIsGovno.pdb

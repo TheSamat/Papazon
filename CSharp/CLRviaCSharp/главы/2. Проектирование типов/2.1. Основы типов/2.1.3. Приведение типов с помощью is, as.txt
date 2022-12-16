@@ -1,0 +1,42 @@
+В C# есть 2 оператора, для работы с приведением:
+
+1) is - проверяет совместимость обьекта с другим и возвращает возможность этого приведения в виде bool:
+
+Object o = new Object();
+Boolean b1 = (o is Object); // b1 равно true
+Boolean b2 = (o is Employee); // b2 равно false
+
+Для null ссылок результат всегда false.
+
+2) as - такое же приведение типов, но без вызова исключения при невозможности приведения - заместо этого она возвращает null:
+
+Person tom = new Person { Name = "Tom" };	// tom.Type - Person
+Employee empl = tom as Employee;            // null, ибо Person -> Employee не проходит явно
+tom.Name = "Bob";                           // NullReferenceException
+Console.WriteLine(empl.Name);
+
+Person tom = new Employee { Name = "Tom" }; // tom.Type - Employee
+Person bob = tom;                           // bob - ссылка на tom
+Employee empl = bob as Employee;            // eml - ссылка на tom, но eml.Type - 
+tom.Name = "Bob";                           // поменяется общее для всех 3 обьектов поле
+Console.WriteLine(empl.Name);               // out: "Bob"
+
+и все случаи:
+
+// Employee : Person
+Person person = new Person();
+Employee employee = new Employee();
+
+//var r01 = (Employee)person;     // Run-in-time Exception
+var r02 = (Person)employee;     // .Employee
+
+var r03 = person is Employee;   // False
+var r04 = employee is Person;   // True
+            
+var r05 = person as Employee;   // null
+var r06 = employee as Person;   // .Employee
+            
+//Employee r07 = person;          // ошибка компиляции
+Person r08 = employee;          // .Employee
+
+Примечание: все вторые переменные имеют тип .Person { .Employee }

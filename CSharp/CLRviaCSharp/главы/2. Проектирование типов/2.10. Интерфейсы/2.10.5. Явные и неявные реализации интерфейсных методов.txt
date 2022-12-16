@@ -1,0 +1,49 @@
+У каждого типа есть таблица методов, содерщащая по записи на каждый метод:
+	1) неунаследованные собственные методы
+	2) виртуальные унаследованные методы:
+		i)	методы базовых типов
+		ii)	интерфейсные методы 
+
+Сделано это для возможности определения компилятором новых методов как реализации интерфейсных методов, а для этого необходимо: 
+	1) идентичные сигнатуры
+	2) public модификатор
+	3) c C# v8.0 отсутствие модификатора new при наличии модификатора abstract у интерфейсного метода
+
+При определении реализации интерфейсного метода, в таблице методов оба метода типа: унаследованный интерфейсный метод и реализованный 
+интерфейсный метод будут ссылаться на один и тот же код. Да, в производном типе есть оба этих метода и их можно определить отдельно:
+    public class Program
+    {
+        private static void Main(string[] args)
+        {
+            SomeClass someClass = new SomeClass();
+            someClass.NotExplicitInterfaceMethodImplementation();
+            someClass.ExplicitInterfaceMethodImplementation();
+
+            ISomeInterface someInterface = new SomeClass();
+            someInterface.NotExplicitInterfaceMethodImplementation();
+            someInterface.ExplicitInterfaceMethodImplementation();
+        }
+    }
+    public interface ISomeInterface
+    {
+        void NotExplicitInterfaceMethodImplementation();
+        void ExplicitInterfaceMethodImplementation();
+    }
+    public class SomeClass : ISomeInterface
+    {
+        public void NotExplicitInterfaceMethodImplementation()
+        {
+            Console.WriteLine("SomeClass.NotExplicitInterfaceMethodImplementation");
+        }
+        public void ExplicitInterfaceMethodImplementation()
+        {
+            Console.WriteLine("SomeClass.ExplicitInterfaceMethodImplementation");
+        }
+        void ISomeInterface.ExplicitInterfaceMethodImplementation()
+        {
+            Console.WriteLine("ISomeInterface.ExplicitInterfaceMethodImplementation");
+        }
+    }
+
+Явно реализованный интерфейсный метод (Explicit Interface Method Implementation, EIMI) должен не иметь модификаторов доступа, сам же неявно
+private. Так, явную реализацию можно использовать только самими типами интерфейса.

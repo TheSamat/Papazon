@@ -1,0 +1,163 @@
+По умолчанию CLR предпологает, что все параметры методов передаются по значению. При передаче обьекта ссылочного типа методу 
+передается новый экземпляр типа с тем же значением ссылочного типа - ссылкой (или указатель) на обьект типа. Т.е. метод может изменить 
+обьект этой ссылки не трогая значение переданного обьекта - самого указателя. Если же передается обьект значимого типа, то в методе
+аргумент копирует значения знчимого типа, а исходный экземпляр остается неизменным.
+
+CLR также позволяет передавать параметры по ссылке, а не по значению. В C# через ключевые слова out и ref. Оба заставляют компилятор 
+генерировать метаданные, описывающие аргумент и заставляющие компилятор использовать вместо аргумента его адресс.
+
+Для CLR между out и ref нет разницы, однако для компилятора C# - вполне. Для out аргумент не обязан быть инициализован, а 
+для ref - наоборот. Поведение ссылочных и значимых типов при этом разнится:
+
+    public sealed class Program 
+    {
+      public static void Main() 
+      {
+        Int32 x; // Инициализация x
+        GetVal(out x); // Инициализация x не обязательна
+        Console.WriteLine(x); // Выводится 10
+      }
+
+      private static void GetVal(out Int32 v) 
+      {
+        v = 10; // инициализация параметра обязательна для out
+      }
+    }
+
+В методе GetVal параметр v предстваляет собой указатель на значимый тип Int32 (т.е. он представляет тип Int32) в стеке Main с 
+адресом переменной x. Так, передавая методу параметр по ссылке, вызывающий код передает адресс памяти статичного экземпляра, а 
+вызванный код (метод) этой памятью управляет, т.е. управление значимого типа осуществляется как ссылочной и вследствии этого 
+экземплярные поля не копируются, что повышает производительность.
+
+Следует отметить, что ref и out для метода имеют одинаковую сигнатуру и обозначают приписку ByRef к типу, т.е. нельзя содать 2 метода, 
+различающихся лишь ключевыми словами ref и out, но в то же время можно создать методы, различных по их присутствию и отсутствию.
+
+Ссылочные типы в аргументах, переданных по значению имеют схожую с значимыми типами логику: переменная в методе (аргумент) инициализируется
+значением переданной переменной, т.е. ссылкой-указателем на экземпляр типа. Любые изменения не над ссылкой-указателем будут применимы и к
+переданной переменной. Но в случае, когда в методе создается новый экземпляр, присваивается переменной в методе, то он не присвоится 
+переданной переменной, ибо с ним не произведено никаких действий, посему он по прежнему будет ссылаться на старый:
+
+    public class Program
+    {
+        private static void Main(string[] args)
+        {
+            A a = new A("Name");        // Create: Name
+            Console.WriteLine(a.Name);  // Name
+            Console.WriteLine();
+
+            A.ChangeName(a, "OtherName");   // Change: OtherName
+            Console.WriteLine(a.Name);      // Name
+            Console.WriteLine();
+
+            A.ChangeName(ref a, "AnotherName"); // Change ref: AnotherName
+            Console.WriteLine(a.Name);          // AnotherName
+            Console.WriteLine();
+        }
+    }
+
+    public class A
+    {
+        public string Name;
+        public static void ChangeName(A other, string name)
+        {
+            other = new A(name);
+            Console.WriteLine("Change: " + name);
+        }
+        public static void ChangeName(ref A other, string name)
+        {
+            other = new A(name);
+            Console.WriteLine("Change ref: " + name);
+        }
+        public A(string name)
+        {
+            Name = name;
+            Console.WriteLine("Create: "+name);
+        }
+    }
+
+Обьекты, передаваемые по ссылке обязательно должны быть одного типа, т.е. неявное преобразование типов производиться не будет, и даже
+приведенные заранее object'ы не смогут сменить ссылки переменых, передаваемых в метод, только по ссылке:
+
+    public class Program
+    {
+        private static void Main(string[] args)
+        {
+            Anime konosuba = new Isekai("Konosuba", 2);
+            Anime noGameNoLife = new Isekai("No Game - No Life", 1);
+
+            Console.WriteLine("Main: " + konosuba + " & " + noGameNoLife+"\n");
+            Anime.Swap(konosuba, noGameNoLife);
+            Console.WriteLine("Main After Swap: " + konosuba + " & " + noGameNoLife + "\n");
+
+            Anime.Swap(ref konosuba, ref noGameNoLife);
+            Console.WriteLine("Main After ref Swap: " + konosuba + " & " + noGameNoLife);
+
+        }
+
+    }
+    public class Anime
+    {
+        public string Name;
+        public Anime(string name)
+        {
+            Name = name;
+        }
+        public override string ToString()
+        {
+            return this.Name;
+        }
+        public static void Swap(Anime firstAnime, Anime secondAnime)
+        {
+            Console.WriteLine("Swap Before: " + firstAnime + " & " + secondAnime);
+
+            Anime swapedAnime = firstAnime;
+            firstAnime = secondAnime;
+            secondAnime = swapedAnime;
+
+            Console.WriteLine("Swap After: " + firstAnime + " & " + secondAnime);
+        }
+        public static void Swap(ref Anime firstAnime, ref Anime secondAnime)
+        {
+            Console.WriteLine("Swap Before: " + firstAnime + " & " + secondAnime);
+
+            Anime swapedAnime = firstAnime;
+            firstAnime = secondAnime;
+            secondAnime = swapedAnime;
+
+            Console.WriteLine("Swap After: " + firstAnime + " & " + secondAnime);
+        }
+    }
+
+    public class Isekai : Anime
+    {
+        public int Season;
+        public Isekai(string name, int season) : base(name)
+        {
+            this.Season = season;
+        }
+        public override string ToString()
+        {
+            return this.Name + " " + this.Season.ToString() + " season";
+        }
+    }
+
+Поэтому обобщения здесь идеально зайдут, ибо обобщенный тип у обоих аргументов должен быть одним и тем же:
+
+    public static void Swap<T>(ref T a, ref T b) {
+        T t = b;
+        b = a;
+        a = t;
+    }
+
+    public static void Main() {
+        String s1 = "Jeffrey";
+        String s2 = "Richter";
+        Swap(ref s1, ref s2);
+        Console.WriteLine(s1); // Выводит "Richter"
+        Console.WriteLine(s2); // Выводит "Jeffrey"
+    }
+
+   
+   Еще можно передавать по ссылке через оператор in, но при этом передаваемый обьект нельзя изменять, но делается это на самом деле
+   через парамерт метода доступный только для чтения, т.е. через создания для параметра только одного свойства get.
+
