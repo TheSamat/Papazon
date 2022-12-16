@@ -93,3 +93,9 @@ ValueTuple не является потомком Tuple, более того, о
     Person Sam = new Person { Name = "Sam", Age = 23 };
     (string name, _) = Sam;
     Console.WriteLine(name);
+
+Но самое большая разница между ValueTuple и Tuple - возможность изменения состояния. У Tuple доступно только автосвойство {get;}, а у
+ValueTuple - поле! И он может его заменять (напомним, что ValueType лучше не изменять, ибо в теории они для этого не предназначены,
+будут созданы новые обьеты с новым значением на месте старых):
+    ValueTuple<int> a = new ValueTuple<int>(0);
+    a.Item1 = 1;
