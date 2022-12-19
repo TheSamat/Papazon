@@ -59,13 +59,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSharp\ASP.NET Core MVC\вопросы\Об ASP.NET Core MVC.txt" />
-    <Content Include="CSharp\ASP.NET Core MVC\главы\1. Введение в ASP.NET Core MVC\1. вопросы\.txt" />
-    <Content Include="CSharp\ASP.NET Core MVC\главы\1. Введение в ASP.NET Core MVC\1. краткое понимание.txt" />
-    <Content Include="CSharp\ASP.NET Core MVC\главы\1. Введение в ASP.NET Core MVC\1.1\1.1. краткое понимание.txt" />
-    <Content Include="CSharp\ASP.NET Core MVC\главы\1. Введение в ASP.NET Core MVC\1.1\1.1.1..txt" />
-    <Content Include="CSharp\ASP.NET Core MVC\главы\1. Введение в ASP.NET Core MVC\1.1\вопросы\опущения.txt" />
-    <Content Include="CSharp\ASP.NET Core MVC\Глосарий.txt" />
+    <Content Include="CSharp\ASP.NET Core MVC from Metanit\вопросы\Об ASP.NET Core MVC.txt" />
+    <Content Include="CSharp\ASP.NET Core MVC from Metanit\главы\1. Введение в ASP.NET Core MVC\1. вопросы\.txt" />
+    <Content Include="CSharp\ASP.NET Core MVC from Metanit\главы\1. Введение в ASP.NET Core MVC\1. краткое понимание.txt" />
+    <Content Include="CSharp\ASP.NET Core MVC from Metanit\главы\1. Введение в ASP.NET Core MVC\1.1\1.1. краткое понимание.txt" />
+    <Content Include="CSharp\ASP.NET Core MVC from Metanit\главы\1. Введение в ASP.NET Core MVC\1.1\1.1.1..txt" />
+    <Content Include="CSharp\ASP.NET Core MVC from Metanit\главы\1. Введение в ASP.NET Core MVC\1.1\вопросы\опущения.txt" />
+    <Content Include="CSharp\ASP.NET Core MVC from Metanit\Глосарий.txt" />
     <Content Include="CSharp\CLRviaCSharp\вопросы\Об Entity Framework.txt" />
     <Content Include="CSharp\CLRviaCSharp\вопросы\Немножечко об парадигмах.txt" />
     <Content Include="CSharp\CLRviaCSharp\вопросы\Ознакомление книги.txt" />
@@ -77,6 +77,8 @@
     <Compile Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\exsample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Крутые фишки\_ - пустая переменная.txt" />
+    <Content Include="Крутые фишки\%28%29 - кортежный тип.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -179,7 +181,7 @@
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.8. Индексаторы или Свойства с параметрами.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\вопросы\опущения.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8. Краткое содержание.txt" />
-    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.1. Событие и ее разработка.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.1. Событие.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.2. Этап 1. Определение типа-уведомления.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.3. Этап 2. Определение члена-события.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.4. Этап 3. Определение метода-уведомителя.txt" />

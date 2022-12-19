@@ -1,19 +1,19 @@
 Если кто-то вместо обычного определения:
-  List<DateTime> dt = new List<DateTime>();
+    List<DateTime> dt = new List<DateTime>();
 
 Строет ракету, чтобы не писать <>:
-  internal sealed class DateTimeList : List<DateTime>{}
+    internal sealed class DateTimeList : List<DateTime>{}
     DateTimeList dt = new DateTimeList();
 
 Бейте его по рукам! Типы DateTimeList и List<DateTime> совершенно разные:
-  Boolean sameType = (typeof(List<DateTime>) == typeof(DateTimeList)); //false
+    Boolean sameType = (typeof(List<DateTime>) == typeof(DateTimeList)); //false
 
 Для уменьшения кодописания существуют синтаксические упрощения:
-  using DateTimeList =     System.Collections.Generic.List<System.DateTime>;
+    using DateTimeList = System.Collections.Generic.List<System.DateTime>;
 
 Здесь директория using определяет DateTimeList как тип System.DateTime и работает с ним соответственно:
-  Boolean sameType = (typeof(List<DateTime>) == typeof(DateTimeList)); //true
+    Boolean sameType = (typeof(List<DateTime>) == typeof(DateTimeList)); //true
 
-Или var:
-var dtl = List<DateTime>();
+Или использовать var:
+    var dtl = List<DateTime>();
 

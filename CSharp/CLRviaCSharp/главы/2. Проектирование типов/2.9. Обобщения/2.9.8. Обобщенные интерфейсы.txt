@@ -1,25 +1,32 @@
-Обобщение интерфейсов - крайне необходимая вещь, без которой каждый значимый тип придется упаковывать и подрывать безопасность типов для работы. Пример:
+Обобщение интерфейсов - крайне необходимая вещь, без которой каждый значимый тип придется упаковывать и подрывать
+безопасность типов при работе с значимыми типами. Пример:
 
+	public interface IEnumerator<T> : IDisposable, IEnumerator 
+	{
+		T Current { get; }
+	}
 
-public interface IEnumerator<T> : IDisposable, IEnumerator 
-{
-  T Current { get; }
-}
+	internal sealed class Triangle : IEnumerator<Point> 
+	{
+		private Point[] m_vertices;
+		// Тип свойства Current в IEnumerator<Point> - это Point
+		public Point Current { get { ... } }
+		...
+	}
 
-internal sealed class Triangle : IEnumerator<Point> {
-  private Point[] m_vertices;
-  // Тип свойства Current в IEnumerator<Point> - это Point
-  public Point Current { get { ... } }
-  ...
-}
+Внимание на свойство обьекта Triangle: он может перечислять набор обьектов point, а свойство Curret имеет тип Point. Обращение
+к экземпляру типа через интерфейс (в Main к примеру) будет происходить через упаковку.
 
-Внимание на свойство обьекта Triangle: он может перечислять набор обьектов point, а свойство Curret имеет тип Point. Так же можно без задания аргументов-типов:
+Так же можно без задания аргументов-типов:
 
-internal sealed class ArrayEnumerator<T> : IEnumerator<T> 
-{
-  private T[] m_array;
-  // Тип свойства Current в IEnumerator<T> — T
-  public T Current { get { ... } }
-  ...
-}
+	internal sealed class ArrayEnumerator<T> : IEnumerator<T> 
+	{
+		private T[] m_array;
+		// Тип свойства Current в IEnumerator<T> — T
+		public T Current { get { ... } }
+		...
+	}
 
+Для масленок, вроде меня:
+Если ты значимый тип реализует интерфейс, а потом к экземпляру этого типа выполняется обращение через интерфейс, 
+то будет происходить упаковка.

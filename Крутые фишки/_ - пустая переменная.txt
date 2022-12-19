@@ -1,0 +1,125 @@
+Бывают моменты, когда должна обьявиться переменная, тип и значения которого не важны и не нужны от слова совсем:
+	1)	ненужные аргументы, возвращаемое значения (+ композиция)
+	2)	ненужные члены кортежного типа (+ деконструкция, декомпозиция)
+	3)	выражения, результат которых не нужно присваивать, но само по себе существовать не может
+	4)	выражение witch
+    5)  out параметры
+    6)  вызов async методов без надобности в возврашении значения
+
+Для этого используются Discards переменные. Это локальные переменные, которые можно инизиализировать, но нельзя читать. т.е. 
+они являются локальными переменными «только для записи»:
+
+Пример 1, 2:
+        public static void Main()
+        {
+            var (_, _, _, pop1, _, pop2) = QueryCityDataForYears("New York City", 1960, 2010);
+            Console.WriteLine($"Population change, 1960 to 2010: {pop2 - pop1:N0}");
+        }
+
+        private static (string, double, int, int, int, int) QueryCityDataForYears(string name, int year1, int year2)
+        {
+            int population1 = 0, population2 = 0;
+            double area = 0;
+
+            if (name == "New York City")
+            {
+                area = 468.48;
+
+                if (year1 == 1960) {
+                    population1 = 7781984;
+                }
+
+                if (year2 == 2010) {
+                    population2 = 8175133;
+                }
+
+                return (name, area, year1, population1, year2, population2);
+            }
+
+            return ("", 0, 0, 0, 0, 0);
+        }
+
+
+Пример 3:
+        string s = "123";
+    _ = s ?? throw new NullReferenceException();
+
+    s = null;
+    _ = s ?? throw new NullReferenceException();
+
+
+Пример 4:
+    object?[] objects = 
+    {
+        CultureInfo.CurrentCulture,
+        CultureInfo.CurrentCulture.DateTimeFormat,
+        CultureInfo.CurrentCulture.NumberFormat,
+        new ArgumentException(), 
+        null 
+    };
+
+    foreach (var obj in objects)
+        ProvidesFormatInfo(obj);
+
+    static void ProvidesFormatInfo(object? obj) =>
+        Console.WriteLine(obj switch
+        {
+            IFormatProvider fmt => $"{fmt.GetType()} object",
+            null => "A null object reference: Its use could result in a NullReferenceException",
+            _ => "Some object type without format information"
+        });
+    //  The example displays the following output:
+    //    System.Globalization.CultureInfo object
+    //    System.Globalization.DateTimeFormatInfo object
+    //    System.Globalization.NumberFormatInfo object
+    //    Some object type without format information
+    //    A null object reference: Its use could result in a NullReferenceException
+
+
+Пример 5:
+    string[] dateStrings = 
+    {
+        "05/01/2018 14:57:32.8", 
+        "2018-05-01 14:57:32.8",
+        "2018-05-01T14:57:32.8375298-04:00", 
+        "5/01/2018",
+        "5/01/2018 14:57:32.80 -07:00",
+        "1 May 2018 2:57:32.8 PM", 
+        "16-05-2018 1:00:32 PM",
+        "Fri, 15 May 2018 20:10:57 GMT" 
+    };
+    
+    foreach (string dateString in dateStrings)
+    {
+        if (DateTime.TryParse(dateString, out _))
+            Console.WriteLine($"'{dateString}': valid");
+        else
+            Console.WriteLine($"'{dateString}': invalid");
+    }
+    // The example displays output like the following:
+    //       '05/01/2018 14:57:32.8': valid
+    //       '2018-05-01 14:57:32.8': valid
+    //       '2018-05-01T14:57:32.8375298-04:00': valid
+    //       '5/01/2018': valid
+    //       '5/01/2018 14:57:32.80 -07:00': valid
+    //       '1 May 2018 2:57:32.8 PM': valid
+    //       '16-05-2018 1:00:32 PM': invalid
+    //       'Fri, 15 May 2018 20:10:57 GMT': invalid
+
+
+Пример 6:
+    //myClass.cs
+    public async Task<bool> Example() => await SomeOtherMethod()
+        // CS4014 Because this call is not awaited, execution of the current method continues before the call is completed. 
+        // Consider applying the 'await' operator to the result of the call.
+
+    // example.cs
+    Example();
+
+    //vs
+
+    //myClass.cs
+    public async Task<bool> Example() => await SomeOtherMethod()
+
+    // example.cs
+    _ = Example();

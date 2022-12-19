@@ -1,62 +1,65 @@
-Обобщенный тип может наследовать другой тип. Но при использовании обобщенного типа с параметрами, каждый наследуется от одного предка: List<T> наследует Object, как и List<String>. Это делает все эти "однотипные" типы несвязанными друг с другом по иеархии и предостовляют крутые возможности. 
+Обобщенный тип может наследовать другой тип. Но при использовании обобщенного типа с параметрами, каждый наследуется
+от одного предка: List<T> наследует Object, как и List<String>. Это делает все эти "однотипные" типы несвязанными 
+друг с другом по иеархии и предостовляют крутые возможности. 
 
 Например, позволяют реализовать связный список, узлы которого имеют одинаковый тип:
 
-internal sealed class Node<T> 
-{
-  public T m_data;
-  public Node<T> m_next;
-  public Node(T data) : this(data, null) {}
-  public Node(T data, Node<T> next) 
-  {
-    m_data = data; m_next = next;
-  }
-  public override String ToString() {
-    return m_data.ToString() +
-    ((m_next != null) ? m_next.ToString() : null);
-  }
-}
+    internal sealed class Node<T> 
+    {
+        public T m_data;
+        public Node<T> m_next;
+        public Node(T data) : this(data, null) {}
+        public Node(T data, Node<T> next) 
+        {
+            m_data = data; m_next = next;
+        }
+        public override String ToString()
+        {
+            return m_data.ToString() +
+            ((m_next != null) ? m_next.ToString() : null);
+        }
+    }
 
 Использование в Main():
 
-Node<Char> head = new Node<Char>('C');
-head = new Node<Char>('B', head);
-head = new Node<Char>('A', head);
-Console.WriteLine(head.ToString()); // Выводится "ABC"
+    Node<Char> head = new Node<Char>('C');
+    head = new Node<Char>('B', head);
+    head = new Node<Char>('A', head);
+    Console.WriteLine(head.ToString()); // Выводится "ABC"
  
 
-Так реализация обобщения гарантирует безопасность типов, кроме приведений object типов. Для реализации связного списка с разными типами данных, надо создать базовую реализацию, а обобщенный тип наследовать от него:
+Так реализация обобщения гарантирует безопасность типов, кроме приведений object типов. Для реализации связного списка
+с разными типами данных, надо создать базовую реализацию, а обобщенный тип наследовать от него:
 
 
-internal class Node 
-{
-  protected Node m_next;
-  public Node(Node next)
-  {
-    m_next = next;
-  }
-}
+    internal class Node 
+    {
+        protected Node m_next;
+        public Node(Node next)
+        {
+            m_next = next;
+        }
+    }
 
-internal sealed class TypedNode<T> : Node 
-{
-  public T m_data;
-  public TypedNode(T data) : this(data, null) {}
-  public TypedNode(T data, Node next) : base(next) 
-  {
-    m_data = data;
-  }
-  public override String ToString() 
-  {
-    return m_data.ToString() +
-    ((m_next != null) ? m_next.ToString() : String.Empty);
- }
-}
+    internal sealed class TypedNode<T> : Node 
+    {
+        public T m_data;
+        public TypedNode(T data) : this(data, null) {}
+        public TypedNode(T data, Node next) : base(next) 
+        {
+            m_data = data;
+        }
+        public override String ToString() 
+        {
+            return m_data.ToString() + ((m_next != null) ? m_next.ToString() : String.Empty);
+        }
+    }
 
 И его использование в Main():
 
-Node head = new TypedNode<Char>('.');
-head = new TypedNode<DateTime>(DateTime.Now, head);
-head = new TypedNode<String>("Today is ", head);
-Console.WriteLine(head.ToString());
+    Node head = new TypedNode<Char>('.');
+    head = new TypedNode<DateTime>(DateTime.Now, head);
+    head = new TypedNode<String>("Today is ", head);
+    Console.WriteLine(head.ToString());
 
 

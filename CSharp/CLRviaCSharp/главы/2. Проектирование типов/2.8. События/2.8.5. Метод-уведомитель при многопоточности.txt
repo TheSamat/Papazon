@@ -1,20 +1,27 @@
-Базовая реализация метода-уведомителя не предостваляет безопасность многопоточному вызову метода, ибо другой поток может 
-удалить всех подписчиков на событие:
+Метод-уведомитель может иметь 3 варианта реализации, отличающихся безопасностью:
 
+Вариант 1: простой, но не защищен от асинхронности, при котором подписчиков не будет и вызовется исключение на Null
+    protected virtual void OnNewMail(NewMailEventArgs e) 
+    {
+        NewMail?.Invoke(this, e)
+    }
+    
+Вариант 2: проверка на null перед рассылкой, но не защищен от возможных изменений оптимизации компиляторов в будущем
     protected virtual void OnNewMail(NewMailEventArgs e) 
     {
       EventHandler<NewMailEventArgs> temp = NewMail;
-      // А подсчиков то удалили в ином потоке до вызова метода!
+
+      // А если подсчиков то удалили в ином потоке до вызова метода, исключения не будет
+      // хоть это редкость, но подписка на стрим на ютубе, нарпимер, может многих бесить!
       if (temp != null) temp(this, e);
     }
 
-И для решения этой проблемы необходимо воспользоваться встроенным функционалом:
-
+Вариант 3: советуемый самим Рихтером, защищенный от всего, если вы параноик) - (с) CODE_BLOG
     protected void OnNewMail(NewMailEventArgs e) {
-      EventHandler<NewMailEventArgs> temp = 
-        Thread.VolatileRead(ref NewMail);
-      if (temp != null) temp(this, e);
+        EventHandler<NewMailEventArgs> temp = Thread.VolatileRead(ref NewMail);
+        if (temp != null) temp(this, e);
     }
 
-Это возволяет считывать NewMail в точке вызова и одновременно с этим скопировать ее ссылку в делегат temp, вызов которого 
-осуществляется при наличии подписчиков.
+Дополнительно можно проверять уведомление на null:
+        _ = e ?? throw new ArgumentNullException(nameof(e));
+
