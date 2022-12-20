@@ -69,7 +69,6 @@
     <Content Include="CSharp\CLRviaCSharp\вопросы\Об Entity Framework.txt" />
     <Content Include="CSharp\CLRviaCSharp\вопросы\Немножечко об парадигмах.txt" />
     <Content Include="CSharp\CLRviaCSharp\вопросы\Ознакомление книги.txt" />
-    <Content Include="CSharp\CLRviaCSharp\вопросы\Что еще надо читать.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1. вопросы\Компиляция.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\вопросы\опущения.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\2.1.5. Связь между пространствами имен и сборками .txt" />
@@ -77,8 +76,17 @@
     <Compile Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\exsample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Крутые фишки\_ - пустая переменная.txt" />
-    <Content Include="Крутые фишки\%28%29 - кортежный тип.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.18. Другие проблемы верификации.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\вопросы\опущения.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.17. Ограничения конструктора.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.16. Дополнительное ограничение.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.15. Основное ограничение.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.14. Верификация и ограничения.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.13. Обобщения других типов.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.11. Обобщенные методы.txt" />
+    <Content Include="CSharp\вопросы\Что еще надо читать.txt" />
+    <Content Include="CSharp\Крутые фишки\_ - пустая переменная.txt" />
+    <Content Include="CSharp\Крутые фишки\%28%29 - кортежный тип.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -188,7 +196,7 @@
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.5. Метод-уведомитель при многопоточности.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.6. Этап 4. Определение метода генератора уведомлений.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.7. Реализация событий компилятором.txt" />
-    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.8. Создание типа, отслеживающего событие — копия.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.8. Создание типа, отслеживающего событие.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.9. Явное управление регистрацией событий.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\вопросы\Как работают делегаты.txt" />
     <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\вопросы\Как работают события.txt" />
@@ -210,7 +218,6 @@
     <Folder Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.2. Компоновка, упаковка, развертывание,  администрирование приложений и типов\вопросы\" />
     <Folder Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\вопросы\" />
     <Folder Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.4. Константы и поля\вопросы\" />
-    <Folder Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\вопросы\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

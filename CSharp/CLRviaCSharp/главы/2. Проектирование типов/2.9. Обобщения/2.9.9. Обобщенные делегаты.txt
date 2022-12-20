@@ -4,6 +4,7 @@
     Invoke, 
     BeginInvoke, 
     EndInvoke. 
+
 А при определении типа делегата с его параметрами, задаются методы класса делегата, т.е. этот делегат:
     public delegate TReturn CallMe<TReturn, TKey, TValue>(TKey key, TValue value);
 
