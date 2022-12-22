@@ -1,0 +1,17 @@
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\bin\Debug\net7.0\Papazon.Persistence.deps.json
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\bin\Debug\net7.0\Papazon.Persistence.dll
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\bin\Debug\net7.0\Papazon.Persistence.pdb
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\bin\Debug\net7.0\Papazon.Application.dll
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\bin\Debug\net7.0\Papazon.Domain.dll
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\bin\Debug\net7.0\Papazon.Application.pdb
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\bin\Debug\net7.0\Papazon.Domain.pdb
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\Papazon.Persistence.csproj.AssemblyReference.cache
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\Papazon.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\Papazon.Persistence.AssemblyInfoInputs.cache
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\Papazon.Persistence.AssemblyInfo.cs
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\Papazon.Persistence.csproj.CoreCompileInputs.cache
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\Papazon.Persistence.csproj.CopyComplete
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\Papazon.Persistence.dll
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\refint\Papazon.Persistence.dll
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\Papazon.Persistence.pdb
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Persistence\obj\Debug\net7.0\ref\Papazon.Persistence.dll

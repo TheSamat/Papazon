@@ -1,0 +1,12 @@
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\bin\Debug\net7.0\Papazon.Domain.deps.json
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\bin\Debug\net7.0\Papazon.Domain.dll
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\bin\Debug\net7.0\Papazon.Domain.pdb
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\Papazon.Domain.csproj.AssemblyReference.cache
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\Papazon.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\Papazon.Domain.AssemblyInfoInputs.cache
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\Papazon.Domain.AssemblyInfo.cs
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\Papazon.Domain.csproj.CoreCompileInputs.cache
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\Papazon.Domain.dll
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\refint\Papazon.Domain.dll
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\Papazon.Domain.pdb
+E:\GithubProject\repos\Papazon\Papazon.Backend\Papazon.Domain\obj\Debug\net7.0\ref\Papazon.Domain.dll

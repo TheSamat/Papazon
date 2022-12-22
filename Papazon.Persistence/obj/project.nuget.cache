@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZbzLwVzlr0XQd4L/tniHRPVzL5KkGq7JVAVMbylLWXtHG5Q+eSRg3H05FPPkVL4qaC71s+9ht0iIlVdmok5kuQ==",
+  "dgSpecHash": "YOlnOcIwhMytS3bti+nRNxc9dE9k6g8P8Bi8zt0OHPBjGISUScGJul1CO2SDTBg3mXQ5RjJEzJu94gJZ8+p+fg==",
   "success": true,
   "projectFilePath": "E:\\GithubProject\\repos\\Papazon\\Papazon.Backend\\Papazon.Persistence\\Papazon.Persistence.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.1\\microsoft.entityframeworkcore.7.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.1\\microsoft.entityframeworkcore.abstractions.7.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.1\\microsoft.entityframeworkcore.analyzers.7.0.1.nupkg.sha512",

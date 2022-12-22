@@ -19,55 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Papazon.Persistence", "Papa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Papazon.WebApi", "Papazon.WebApi\Papazon.WebApi.csproj", "{6B5305DE-97F5-435D-AD9B-CE0771E8E903}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Сomments(Rus)", "Сomments(Rus)", "{00B8867C-CD1E-47BF-8DF2-043C4E018E4C}"
-	ProjectSection(SolutionItems) = preProject
-		Общее представление о проекте.txt = Общее представление о проекте.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{564BC5A3-93DE-4081-BF5F-9C6EB92A61C0}"
-	ProjectSection(SolutionItems) = preProject
-		Infrastructure.txt = Infrastructure.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityTypeConfigurations", "EntityTypeConfigurations", "{E3A65399-D4F8-4213-83D7-1780FD21C9DF}"
-	ProjectSection(SolutionItems) = preProject
-		EntityTypeConfigurations.txt = EntityTypeConfigurations.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{E3CDC149-E6FF-44FA-9C0F-BA6948F9A213}"
-	ProjectSection(SolutionItems) = preProject
-		Persistence.txt = Persistence.txt
-		PapazonDBContext.txt = PapazonDBContext.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Papazon", "Papazon", "{A3063022-8A1B-4425-AA5D-6ABE8513C938}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductConfiguration", "ProductConfiguration", "{DDF09FA1-D2E0-47BE-A3E7-1AD494924006}"
-	ProjectSection(SolutionItems) = preProject
-		ProductConfiguration.txt = ProductConfiguration.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{22C16801-92E4-4DBA-9688-CD3FDA57154B}"
-	ProjectSection(SolutionItems) = preProject
-		Core.txt = Core.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{A9DD651F-2B99-4BCC-AE1B-9174021103E6}"
-	ProjectSection(SolutionItems) = preProject
-		Application.txt = Application.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Проектирование", "Проектирование", "{CCA018AF-7979-4A92-8962-2DCC6640B377}"
-	ProjectSection(SolutionItems) = preProject
-		Проектирование проекта (Backend).txt = Проектирование проекта (Backend).txt
-		Взоимодействие с БД.txt = Взоимодействие с БД.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{41CC5687-FEA2-4AAF-AB28-8B377EF8A73E}"
-	ProjectSection(SolutionItems) = preProject
-		Interfaces.txt = Interfaces.txt
-		IPapazonDBContext.txt = IPapazonDBContext.txt
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Papazon.Test", "Papazon.Test\Papazon.Test.csproj", "{653E97B6-2B6E-4C49-B600-49389A5D5403}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +43,10 @@ Global
 		{6B5305DE-97F5-435D-AD9B-CE0771E8E903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B5305DE-97F5-435D-AD9B-CE0771E8E903}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B5305DE-97F5-435D-AD9B-CE0771E8E903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{653E97B6-2B6E-4C49-B600-49389A5D5403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{653E97B6-2B6E-4C49-B600-49389A5D5403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{653E97B6-2B6E-4C49-B600-49389A5D5403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{653E97B6-2B6E-4C49-B600-49389A5D5403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,15 +56,7 @@ Global
 		{18B7EA7A-A579-4A8F-824D-FF0E4CE276E5} = {F342A368-A350-4C35-8235-91173DB47B37}
 		{7FFDBEB7-F896-466B-8A80-DE49C2676E2B} = {0066C92F-D05E-494E-8D77-D0B6FB6033C5}
 		{6B5305DE-97F5-435D-AD9B-CE0771E8E903} = {0CFF5446-7280-4851-BFCE-E25DC95567D7}
-		{564BC5A3-93DE-4081-BF5F-9C6EB92A61C0} = {A3063022-8A1B-4425-AA5D-6ABE8513C938}
-		{E3A65399-D4F8-4213-83D7-1780FD21C9DF} = {E3CDC149-E6FF-44FA-9C0F-BA6948F9A213}
-		{E3CDC149-E6FF-44FA-9C0F-BA6948F9A213} = {564BC5A3-93DE-4081-BF5F-9C6EB92A61C0}
-		{A3063022-8A1B-4425-AA5D-6ABE8513C938} = {00B8867C-CD1E-47BF-8DF2-043C4E018E4C}
-		{DDF09FA1-D2E0-47BE-A3E7-1AD494924006} = {E3A65399-D4F8-4213-83D7-1780FD21C9DF}
-		{22C16801-92E4-4DBA-9688-CD3FDA57154B} = {A3063022-8A1B-4425-AA5D-6ABE8513C938}
-		{A9DD651F-2B99-4BCC-AE1B-9174021103E6} = {22C16801-92E4-4DBA-9688-CD3FDA57154B}
-		{CCA018AF-7979-4A92-8962-2DCC6640B377} = {00B8867C-CD1E-47BF-8DF2-043C4E018E4C}
-		{41CC5687-FEA2-4AAF-AB28-8B377EF8A73E} = {A9DD651F-2B99-4BCC-AE1B-9174021103E6}
+		{653E97B6-2B6E-4C49-B600-49389A5D5403} = {ADE2447E-69AB-403C-A138-7C5D8A3EFBFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D9630F2-F209-44DB-A119-FF75F4E8D6D5}
