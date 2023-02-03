@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{447E1FBE-1387-442C-87A1-7D7BD4672F89}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Studing</RootNamespace>
+    <AssemblyName>Studing</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1. вопросы\Компиляция.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\вопросы\опущения.txt" />
+    <Compile Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\exsample.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="CSharp\вопросы\Что еще надо читать.txt" />
+    <Content Include="CSharp\Крутые фишки\_ - пустая переменная.txt" />
+    <Content Include="CSharp\Крутые фишки\%28%29 - кортежный тип.txt" />
+    <Content Include="CSharp\разработка\план.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="CSharp\ASP.NET Core from Metanit\вопросы\Об ASP.NET Core.md" />
+    <None Include="CSharp\ASP.NET Core from Metanit\главы\2. Основы в ASP.NET Core\2.1. Создание и запуск приложения. WebApplication и WebApplicationBuilder.md" />
+    <None Include="CSharp\ASP.NET Core from Metanit\главы\. f\. вопросы\.md" />
+    <None Include="CSharp\ASP.NET Core from Metanit\главы\. f\. краткое понимание.md" />
+    <None Include="CSharp\ASP.NET Core from Metanit\главы\1. Введение в ASP.NET Core\1. Что такое ASP.NET Core.md" />
+    <None Include="CSharp\ASP.NET Core from Metanit\Глосарий.md" />
+    <None Include="CSharp\CLRviaCSharp\вопросы\Немножечко об парадигмах.md" />
+    <None Include="CSharp\CLRviaCSharp\вопросы\Об Entity Framework.md" />
+    <None Include="CSharp\CLRviaCSharp\вопросы\Содержание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2. Вопросы\Вся разница между ссылочными типам и значимыми.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2. краткое понимание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\2.1. краткое понимание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\2.1.1. Об System.Object.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\2.1.2. Приведение типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\2.1.3. Приведение типов с помощью is, as.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\2.1.4. Пространства имен и сборки.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\2.1.5. Связь между пространствами имен и сборками .md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\2.1.6. Как разные компоненты взаимодействуют.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.10. Интерфейсы\2.10. Краткое содержание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.10. Интерфейсы\2.10.1. Наследование в классах и интерфейсах.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.10. Интерфейсы\2.10.2. Определение интерфейса.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.10. Интерфейсы\2.10.3. Наследование интерфейсов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.10. Интерфейсы\2.10.4. Подробней об вызовах интерфейсных методов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.10. Интерфейсы\2.10.5. Явные и неявные реализации интерфейсных методов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.10. Интерфейсы\2.10.6. Обобщенные интерфейсы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2. краткое понимание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2.1. Примитивные типы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2.2. Проверяемые и непроверяемые операции для примитивных типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2.3. Ссылочные и значимые типы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2.4. Упаковка и распаковка значимых типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2.5. Изменение упакованных полей интерфейсами.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2.6. Равенство и тождество обьектов — копия.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2.7. Хеш-коды обьектов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\2.2.8. Примитивный тип данных dynamic.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3. краткое понимание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.1. Члены типа.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.2. Дружественные сборки.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.3. Доступность типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.4. Статистические классы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.5. Частичные классы, структуры и интерфейсы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.6. Компоненты, ООП, версии.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.7. Вызов виртуальных методов, свойств и событий.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.8. Рациональное использование модификаторов типа.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\2.3.9. Виртуальные методы при управлении версиями.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.3. Основыные сведения о типах\вопросы\наследование, наследование статистических типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.4. Константы и поля\2.4. Краткое содержание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.4. Константы и поля\2.4.1. Константы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.4. Константы и поля\2.4.2. Поля.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5. Краткое содержание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.1. Конструкторы экземпляров ссылочных типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.10. Расширение разных типов методами расширения.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.12. Частичные методы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.2. Конструкторы экземпляров значимых типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.3. Конструкторы типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.4. Методы перегруженных операторов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.7. Методы операторов преобразования.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.8. Методы расширения.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\2.5.9. Правила и рекомендации.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.5. Методы\вопросы\опущения.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\2.6. Краткое содержание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\2.6.1. Необязательные и именованные аргументы--параметры.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\2.6.2. Правила использования параметров.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\2.6.4. Неявно типизированные локальные переменные.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\2.6.5. Передача параметров по ссылке.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\2.6.6. Передача переменного количисла аргументов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\2.6.7. Типы параметров и возвращаемых значений.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\вопросы\опущения.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.6. Параметры\вопросы\разница между out и ref.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7. Краткое содержание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.1. Свойства без параметров.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.10. Производительность при вызове метода доступа.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.11. Доступность методов доступа свойств.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.2. Автоматически реализуемые свойства.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.3. Осторожный подход к определению свойств.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.5. Инициализаторы объектов и коллекций.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.6. Анонимные типы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.7+ ValueTuple улучшенный кортежный тип.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.7. System.Tuple кортежный тип.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\2.7.8. Индексаторы или Свойства с параметрами.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8. Краткое содержание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.1. Событие.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.2. Этап 1. Определение типа-уведомления.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.3. Этап 2. Определение члена-события.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.4. Этап 3. Определение метода-уведомителя.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.5. Метод-уведомитель при многопоточности.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.6. Этап 4. Определение метода генератора уведомлений.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.7. Реализация событий компилятором.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.8. Создание типа, отслеживающего событие.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\2.8.9. Явное управление регистрацией событий.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\вопросы\Как работают делегаты.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.8. События\вопросы\Как работают события.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9. Краткое содержание.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.1. Обобщения.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.10. Контравариантные и ковариантные аргументы-типы .md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.11. Обобщенные методы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.13. Обобщения других типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.14. Верификация и ограничения.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.15. Основное ограничение.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.16. Дополнительное ограничение.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.17. Ограничения конструктора.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.18. Другие проблемы верификации.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.2. Обобщения в FCL.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.4. Открытые и закрытые типы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.5. Обобщенные типы и наследование.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.6. Идентификация обобщенных типов.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.7. Разрастание кода.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.8. Обобщенные интерфейсы.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\2.9.9. Обобщенные делегаты.md" />
+    <None Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.9. Обобщения\вопросы\опущения.md" />
+    <None Include="CSharp\CLRviaCSharp\Глосарий.md" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1. краткое понимание.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1. краткое понимание.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.1. Компиляция исходного кода.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.10. Спецификации CTS.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.11. Спецификации CLS.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.12 Взаимодействие с неуправляемым кодом.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.2. Объединение управляемых модулей.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.3. Загрузка CLR.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.4. Исполнение кода сборки.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.5. IL-код и верификация.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.6. Небезопасный код.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.7. IL и защита интеллектуальной собственности.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.1. Модель выполнения кода в CLR\1.1.9. Библиотека FCL.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.2. Компоновка, упаковка, развертывание,  администрирование приложений и типов\1.2. краткое понимание.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.2. Компоновка, упаковка, развертывание,  администрирование приложений и типов\1.2.1 Задачи развертывания в .NET Framework.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.10. Интерфейсы\вопросы\Зачем интерфейсные методы запечатаны.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.2. Примитивные, ссылочные и значимые типы\вопросы\Значимые типы.txt" />
+    <Content Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.7. Свойства\вопросы\опущения.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CSharp\CLRviaCSharp\главы\1. Основы CLR\1.2. Компоновка, упаковка, развертывание,  администрирование приложений и типов\вопросы\" />
+    <Folder Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.1. Основы типов\вопросы\" />
+    <Folder Include="CSharp\CLRviaCSharp\главы\2. Проектирование типов\2.4. Константы и поля\вопросы\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
